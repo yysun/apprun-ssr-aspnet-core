@@ -10,11 +10,13 @@ namespace WebApplication4.Controllers
 {
     public class HomeController : Controller
     {
+        [VirtualDom]
         public IActionResult Index()
         {
             return View();
         }
 
+        [VirtualDom]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -22,6 +24,7 @@ namespace WebApplication4.Controllers
             return View();
         }
 
+        [VirtualDom]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
@@ -29,6 +32,7 @@ namespace WebApplication4.Controllers
             return View();
         }
 
+        [VirtualDom]
         public IActionResult Privacy()
         {
             return View();
