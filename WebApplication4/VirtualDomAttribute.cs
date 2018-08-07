@@ -38,7 +38,8 @@ namespace WebApplication4
                 {
                     var doc = new HtmlDocument();
                     doc.LoadHtml(capturedText);
-                    var root = doc.DocumentNode.SelectSingleNode("/div");
+                    var root = doc.DocumentNode.SelectSingleNode("//div[@id='apprun-app']");
+                    if (root == null) root = doc.DocumentNode.SelectSingleNode("//div");
                     vdom = RemoveWhiteSpace(Convert(root).GetValue("children").ToString(Formatting.None));
                 }
                 filterContext.HttpContext.Response.Body = oldStream;
